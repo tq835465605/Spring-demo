@@ -1,0 +1,42 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <!-- 使用autowire注释必备 -->
+	<context:annotation-config/>
+
+	<bean id="helloworld" class="com.foxhis.itf.spring.HelloWorld" autowire="byType">
+	</bean>
+
+<!-- 	<bean id="name1" class="com.foxhis.itf.spring.Name">
+		<property name="nameb" value="tongqing" />
+	</bean> -->
+	
+	<bean id="name234" class="com.foxhis.itf.spring.Name">
+		<property name="nameb" value="顾烟云" />
+	</bean>
+<!-- 依赖注入DI -->
+	<bean id="OutputHelper" class="com.foxhis.itf.output.OutputHelper">
+		<property name="outputGenerator" ref="JsonOutputGenerator" />
+	</bean>
+
+	<bean id="CsvOutputGenerator" class="com.foxhis.itf.output.CsvOutputGenerator"></bean>
+	<bean id="JsonOutputGenerator" class="com.foxhis.itf.output.JsonOutputGenerator"></bean>
+	
+	
+	<bean id="UsernameDao" class = "com.foxhis.itf.springdatabase.JdbcUsernameDaoImpl" >
+	</bean>
+	  
+	<bean id="dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/xmsitf" />
+		<property name="username" value="root" />
+		<property name="password" value="foxhis" />
+	</bean>
+	
+	<bean id ="hello" class = "com.foxhis.itf.spring.javaconfig.Hello">
+	</bean>
+</beans>
