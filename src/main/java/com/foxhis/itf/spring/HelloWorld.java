@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class HelloWorld {
 
+	
+	//自动装配，其内部是采用byType
 	@Autowired
+	//装配有歧义的时候
 //	@Qualifier("name1")
 	private Name name2;
 	

@@ -12,6 +12,4 @@ public class Name {
 		this.nameb = nameb;
 	}
 
-	
-	
 }
