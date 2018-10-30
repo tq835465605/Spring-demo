@@ -26,6 +26,7 @@ public class HelloWorld {
 	
 	public void printHello() {
 		System.out.println("Spring 4.35 : Hello ! " + name2.getNameb());
+		
 	}
 	
 }
